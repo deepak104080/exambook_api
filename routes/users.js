@@ -4,11 +4,11 @@ const db = require('../db');
 
 
 
-router.get('allusers', async(req,res) => {
+router.get('/allusers', async (req,res) => {
     try{
         const response = await db.promise().query('SELECT * FROM users');
-        console.log(response);
-        res.send(200).json(response);
+        console.log(response[0]);
+        res.status(200).json(response[0]);
     }
     catch(err){
         console.log(err);
