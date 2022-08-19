@@ -4,9 +4,9 @@ const db = require('../db');
 
 
 
-router.get('/allusers', async (req,res) => {
+router.get('/fetchallexams', async (req,res) => {
     try{
-        const response = await db.promise().query('SELECT * FROM users');
+        const response = await db.promise().query('SELECT * FROM exams');
         // console.log(response[0]);
         res.status(200).json(response[0]);
     }
